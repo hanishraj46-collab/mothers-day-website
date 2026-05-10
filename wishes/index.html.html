@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Mother's Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    background:black;
+    color:white;
+}
+
+/* VIDEO BACKGROUND */
+
+.video-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-3;
+}
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to bottom,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.85));
+    z-index:-2;
+}
+
+/* INTRO SCREEN */
+
+.intro{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+    animation:introFade 5s forwards;
+}
+
+.intro h1{
+    font-size:4rem;
+    letter-spacing:4px;
+    animation:zoomIn 2s ease;
+}
+
+.intro p{
+    margin-top:20px;
+    color:#ffd4de;
+    font-size:1.3rem;
+    animation:fadeUp 2s ease;
+}
+
+@keyframes introFade{
+    0%,80%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(0.5);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(40px);
+        opacity:0;
+    }
+
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+/* MUSIC BUTTON */
+
+.music-button{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:12px 22px;
+    border-radius:50px;
+    cursor:pointer;
+    z-index:999;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.3);
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+.music-button:hover{
+    transform:scale(1.08);
+    background:white;
+    color:#ff4d79;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.glass{
+    width:90%;
+    max-width:850px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:35px;
+    padding:50px 30px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.5);
+    animation:floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(255,255,255,0.6);
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:2;
+    color:#f3f3f3;
+}
+
+/* TYPING */
+
+.typing{
+    font-size:1.4rem;
+    margin-top:20px;
+    color:#ffd6df;
+    border-right:3px solid white;
+    white-space:nowrap;
+    overflow:hidden;
+    display:inline-block;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 40px;
+    border-radius:50px;
+    background:white;
+    color:#ff4d79;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+/* SECTION */
+
+.section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:50px;
+}
+
+/* SLIDER */
+
+.slider{
+    max-width:1000px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:30px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+.slides{
+    display:flex;
+    width:400%;
+    animation:slide 16s infinite;
+}
+
+.slides img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+}
+
+@keyframes slide{
+
+    0%{margin-left:0;}
+    20%{margin-left:0;}
+
+    25%{margin-left:-100%;}
+    45%{margin-left:-100%;}
+
+    50%{margin-left:-200%;}
+    70%{margin-left:-200%;}
+
+    75%{margin-left:-300%;}
+    95%{margin-left:-300%;}
+
+    100%{margin-left:0;}
+}
+
+/* 3D CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:25px;
+    transition:0.5s;
+    transform-style:preserve-3d;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+    transform:rotateY(10deg) rotateX(10deg) scale(1.05);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#ffd4de;
+}
+
+/* LETTER */
+
+.letter{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,0.08);
+    padding:50px;
+    border-radius:30px;
+    line-height:2;
+    font-size:1.1rem;
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#ddd;
+}
+
+/* HEARTS */
+
+.hearts span{
+    position:fixed;
+    bottom:-50px;
+    font-size:25px;
+    animation:hearts 10s linear infinite;
+}
+
+.hearts span:nth-child(1){left:10%; animation-delay:0s;}
+.hearts span:nth-child(2){left:25%; animation-delay:2s;}
+.hearts span:nth-child(3){left:40%; animation-delay:4s;}
+.hearts span:nth-child(4){left:60%; animation-delay:1s;}
+.hearts span:nth-child(5){left:75%; animation-delay:5s;}
+.hearts span:nth-child(6){left:90%; animation-delay:3s;}
+
+@keyframes hearts{
+
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* PETALS */
+
+.petals span{
+    position:fixed;
+    top:-10%;
+    font-size:30px;
+    animation:fall 10s linear infinite;
+}
+
+.petals span:nth-child(1){left:10%; animation-delay:0s;}
+.petals span:nth-child(2){left:30%; animation-delay:2s;}
+.petals span:nth-child(3){left:50%; animation-delay:4s;}
+.petals span:nth-child(4){left:70%; animation-delay:1s;}
+.petals span:nth-child(5){left:90%; animation-delay:3s;}
+
+@keyframes fall{
+
+    0%{
+        transform:translateY(-10vh) rotate(0deg);
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .slides img{
+        height:350px;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .intro h1{
+        font-size:2.2rem;
+    }
+
+    .typing{
+        font-size:1rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop class="video-bg">
+    <source src="background.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- INTRO -->
+<div class="intro">
+    <h1>Happy Mother's Day ❤️</h1>
+    <p>A Small Surprise Made With Love ✨</p>
+</div>
+
+<!-- MUSIC BUTTON -->
+<div class="music-button" onclick="playMusic()">
+    🎵 Play Music
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts">
+    <span>❤️</span>
+    <span>💖</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>❤️</span>
+    <span>💞</span>
+</div>
+
+<!-- FLOWER PETALS -->
+<div class="petals">
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+    <span>🌸</span>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="glass">
+
+        <h1>To The Best Mom In The World 🌸</h1>
+
+        <p>
+            Thank you for every smile, every hug,
+            every sacrifice, and every moment of love.
+            You are the reason behind my happiness ❤️
+        </p>
+
+        <h2 class="typing"></h2>
+
+        <a href="#memories" class="btn">
+            View Memories 📸
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SLIDESHOW -->
+<section class="section" id="memories">
+
+    <h2 class="section-title">
+        Our Beautiful Memories ✨
+    </h2>
+
+    <div class="slider">
+
+        <div class="slides">
+
+            <img src="photo1.jpg">
+            <img src="photo2.jpg">
+            <img src="photo3.jpg">
+            <img src="photo4.jpg">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 3D CARDS -->
+<section class="section">
+
+    <h2 class="section-title">
+        Why You Are Special 💖
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Infinite Love ❤️</h3>
+
+            <p>
+                Your love makes every bad day feel beautiful.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>My Biggest Support 🌸</h3>
+
+            <p>
+                You always stand beside me in every situation.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>My Inspiration ✨</h3>
+
+            <p>
+                Everything good I learn in life starts from you.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LETTER -->
+<section class="section">
+
+    <h2 class="section-title">
+        A Letter For You 💌
+    </h2>
+
+    <div class="letter">
+
+        Dear Mom,
+        <br><br>
+
+        You are the light in my darkest days,
+        the smile behind my happiness,
+        and the reason I never give up.
+
+        <br><br>
+
+        Every hug from you feels like home.
+        Every prayer from you protects me.
+        Every sacrifice you made built my future.
+
+        <br><br>
+
+        No matter how much I grow,
+        I will always need your love.
+
+        <br><br>
+
+        Thank you for being my mother,
+        my protector,
+        my teacher,
+        and my best friend.
+
+        <br><br>
+
+        I love you forever and beyond ❤️
+
+    </div>
+
+</section>
+
+<footer>
+    Made With Endless Love ❤️
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+/* FORCE MUSIC AUTOPLAY */
+
+window.addEventListener('load', () => {
+
+    const music = document.getElementById("bgMusic");
+
+    music.volume = 0.7;
+
+    const playPromise = music.play();
+
+    if(playPromise !== undefined){
+
+        playPromise.catch(() => {
+
+            /* Backup autoplay after first click */
+
+            document.body.addEventListener('click', () => {
+                music.play();
+            }, { once:true });
+
+        });
+
+    }
+
+});
+
+/* TYPING EFFECT */
+
+const text = "Thank you for loving me unconditionally ❤️";
+
+const typing = document.querySelector(".typing");
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < text.length){
+
+        typing.innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,80);
+
+    }
+
+}
+
+typeWriter();
+
+</script>
+
+</script>
+
+</body>
+</html>
